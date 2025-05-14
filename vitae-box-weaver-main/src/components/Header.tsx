@@ -35,11 +35,11 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-2 hover:translate-x-1 transition-all duration-200">
             <Github size={16} className="shrink-0" />
-            <a href="#" className="hover:underline">GitHub Profile</a>
+            <a href="https://github.com/dashboard" className="hover:underline">GitHub Profile</a>
           </div>
           <div className="flex items-center gap-2 hover:translate-x-1 transition-all duration-200">
             <Linkedin size={16} className="shrink-0" />
-            <a href="#" className="hover:underline">LinkedIn Profile</a>
+            <a href="https://www.linkedin.com/in/vikas-talawar-407a61257/" className="hover:underline">LinkedIn Profile</a>
           </div>
         </div>
       </div>
