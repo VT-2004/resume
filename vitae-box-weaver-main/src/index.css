@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Theme-specific section colors */
+    --card-bg: 0 0% 100%;
+    --separator: 214.3 31.8% 91.4%;
+  }
+
+  /* Green theme color variables - updated for hacker green */
+  [data-theme='green'] {
+    --card-bg: 134 54% 10%;  /* Darker green for cards */
+    --separator: 134 44% 15%; /* Slightly lighter green for separators */
+    --foreground: 120 100% 80%;  /* Bright hacker green text for visibility */
+    --primary: 134 60% 80%;  /* Brighter primary for contrast */
+    --muted-foreground: 134 30% 70%; /* Adjusted muted text for visibility */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Ensure all text elements respond to theme foreground color */
+  h1, h2, h3, h4, h5, h6, p, span, li, a, button, input, label, div {
+    color: hsl(var(--foreground));
+    transition: color 0.3s ease;
+  }
+}
+
+/* Resume-specific styles */
+.bg-hackergreen {
+  background-color: #0D2B16; /* Changed from #F2FCE2 to authentic hacker green */
+}
+
+.bg-white {
+  background-color: white;
+}
+
+/* Theme-sensitive card styles */
+.theme-card {
+  background-color: hsl(var(--card-bg));
+  transition: background-color 0.3s ease;
+}
+
+.theme-separator {
+  background-color: hsl(var(--separator));
+  transition: background-color 0.3s ease;
+}
+
+/* Hover and interaction effects */
+.responsive-section {
+  @apply transition-all duration-200 hover:shadow-lg hover:scale-[1.01] hover:z-10;
+}
+
+.responsive-subsection {
+  @apply transition-all duration-200 hover:bg-secondary/70 hover:shadow-md;
+}
+
+/* Button hover effects */
+.responsive-button {
+  @apply transition-all duration-200 hover:scale-105 active:scale-95;
+}
